@@ -1,72 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap");
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-*, ::after,::before {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
+
+/* center the container */
 
 body {
-    background-color:rgb(10, 38, 71);
-    font-family:Inter,Poppins,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Mulish", sans-serif;
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
+}
 
+.container {
+  min-width: 50%;
+  min-height: 100px;
+  border-radius: 15px;
+  background-color: #2b282b;
+  border: 1px solid black;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 50px 30px;
 }
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    min-width: 400px;
-    width:400px;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    min-height:100px;
 
-    
+.container .heading {
+  text-align: center;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  background-color: #000000;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+}
 
+.task-getter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 30px;
+  column-gap: 10px;
 }
-.newtasks {
-    display: flex;
-    justify-content: space-between;
-    padding:20px 15px;
+
+.form input {
+  width: 220px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid grey;
 }
-.newtasks input,button {
-    height:40px;
-    min-height: 40px;
-    border-radius:6px;
-    text-align:center;
-    border:none;
-    
+
+.form input:focus {
+  border: 1px solid #add8e6;
 }
-.newtasks input {
-    width:75%;
-    border:1px solid rgba(10,38,71);
+input:focus::-webkit-input-placeholder {
+  color: #1e90ff;
 }
-.newtasks button {
-    background-color: rgba(10,38,71);;
-    width:20%;
-    color:white;
-    cursor:pointer;
+/*style button */
+
+.button {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  transition: 0.3s ease-in-out;
 }
- .task {
-    display: flex;
-    justify-content: space-between;
-    padding:10px 15px ;
+
+#add {
+  background-color: #2e8b57;
 }
-.task span {
-    width:75%;
+#reset {
+  background-color: #6495ed;
 }
-.task button {
-    background-color: red;
-    width:20%;
-    color:white;
-    cursor:pointer;
-    
+
+#delete {
+  background-color: red;
+}
+#finish {
+  background-color: green;
+}
+/* style divider */
+
+.divider {
+  width: 95%;
+  height: 2px;
+  background-color: black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+/*style task list */
+
+.task-banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+.task-banner {
+  padding-right: 60px;
+  color: white;
+  font-weight: 700;
+}
+.task-content {
+  color: lightgrey;
+  /*    max-width:calc(100% - 200px);*/
+  width: 200px;
+  max-width: 100%;
+  /*    overflow: hidden;*/
+}
+
+/*hover css */
+
+.button:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.task-section {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+/*customize scroll bar of div */
+
+.task-section::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+  height: 5px;
+  overflow: hidden;
+}
+.task-section::-webkit-scrollbar-thumb:hover {
+  background-color: lightgray;
+}
+
+.task-section::webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+.task-section::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 20px;
+}
+
+/*responsive design */
+
+@media only screen and (max-width: 550px) {
+  .task-content {
+    font-size: 13px;
+  }
+  .button {
+    font-size: 10px;
+    width: 40px;
+  }
 }
