@@ -1,0 +1,72 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*, ::after,::before {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    background-color:rgb(10, 38, 71);
+    font-family:Inter,Poppins,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 100vh;
+
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    min-width: 400px;
+    width:400px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    min-height:100px;
+
+    
+
+}
+.newtasks {
+    display: flex;
+    justify-content: space-between;
+    padding:20px 15px;
+}
+.newtasks input,button {
+    height:40px;
+    min-height: 40px;
+    border-radius:6px;
+    text-align:center;
+    border:none;
+    
+}
+.newtasks input {
+    width:75%;
+    border:1px solid rgba(10,38,71);
+}
+.newtasks button {
+    background-color: rgba(10,38,71);;
+    width:20%;
+    color:white;
+    cursor:pointer;
+}
+ .task {
+    display: flex;
+    justify-content: space-between;
+    padding:10px 15px ;
+}
+.task span {
+    width:75%;
+}
+.task button {
+    background-color: red;
+    width:20%;
+    color:white;
+    cursor:pointer;
+    
+}
